@@ -8,6 +8,19 @@ CompoundCloud turns a versioned workload contract into ranked Azure, AWS, GCP, a
 
 > This repository is an executable first vertical slice. Reference prices and benchmark profiles are transparent assumptions, not fabricated live measurements or provider quotes.
 
+![CompoundCloud unit-economics decision](evidence/screenshots/03-unit-economics-decision.png)
+
+## Verified Azure deployment
+
+The repository's evidence plane was deployed successfully to Azure on 2026-08-29. The
+deployment created Application Insights, Log Analytics, a hardened Storage account, and
+a private architecture-decision container in `rg-compoundcloud-demo`.
+
+![Azure deployment completed](evidence/screenshots/02-azure-deployment-complete.png)
+
+See the complete [deployment and decision evidence](evidence/README.md), including the
+resource inventory, deployment correlation ID, and explicit evidence boundaries.
+
 ## Try it
 
 ```bash
