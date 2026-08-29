@@ -1,0 +1,16 @@
+{
+  "name": "Sovereign insurance document-processing factory",
+  "monthly_requests": 1500000,
+  "average_input_tokens": 7000,
+  "average_output_tokens": 900,
+  "revenue_per_successful_request": 0.24,
+  "quality_target": 0.96,
+  "p95_latency_target_ms": 1200,
+  "availability_target": 0.999,
+  "data_residency": ["eastus2"],
+  "peak_to_average_ratio": 4.0,
+  "retrieval": true,
+  "regulated": true,
+  "max_monthly_cloud_cost": 80000
+}
+

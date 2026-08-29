@@ -1,0 +1,16 @@
+{
+  "name": "B2B customer-support resolution copilot",
+  "monthly_requests": 12000000,
+  "average_input_tokens": 1800,
+  "average_output_tokens": 450,
+  "revenue_per_successful_request": 0.018,
+  "quality_target": 0.91,
+  "p95_latency_target_ms": 1600,
+  "availability_target": 0.9995,
+  "data_residency": ["eastus2", "us-east-1", "us-central1"],
+  "peak_to_average_ratio": 5.0,
+  "retrieval": true,
+  "regulated": false,
+  "max_monthly_cloud_cost": 40000
+}
+

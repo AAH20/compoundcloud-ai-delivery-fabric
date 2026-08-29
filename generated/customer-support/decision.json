@@ -1,0 +1,235 @@
+{
+  "schema_version": "1.0",
+  "workload": {
+    "name": "B2B customer-support resolution copilot",
+    "monthly_requests": 12000000,
+    "average_input_tokens": 1800,
+    "average_output_tokens": 450,
+    "revenue_per_successful_request": 0.018,
+    "quality_target": 0.91,
+    "p95_latency_target_ms": 1600,
+    "availability_target": 0.9995,
+    "data_residency": [
+      "eastus2",
+      "us-east-1",
+      "us-central1"
+    ],
+    "peak_to_average_ratio": 5.0,
+    "retrieval": true,
+    "regulated": false,
+    "max_monthly_cloud_cost": 40000
+  },
+  "decision": {
+    "selected_candidate": "gcp-global-balanced",
+    "production_ready": true,
+    "reason": "highest feasible revenue-adjusted architecture score"
+  },
+  "evaluations": [
+    {
+      "candidate": {
+        "id": "gcp-global-balanced",
+        "cloud": "gcp",
+        "region": "us-central1",
+        "compute": "Cloud Run",
+        "model": "Vertex AI balanced model",
+        "model_class": "managed",
+        "topology": "global-load-balancer-private-service-connect",
+        "retrieval": "Vertex AI Search",
+        "unit_input_per_million": 0.5,
+        "unit_output_per_million": 2.0,
+        "fixed_monthly_cost": 585,
+        "variable_platform_cost_per_request": 0.0003,
+        "expected_quality": 0.91,
+        "expected_p95_ms": 1320,
+        "expected_availability": 0.9995,
+        "max_sustained_rps": 105,
+        "egress_cost_per_gb": 0.085
+      },
+      "feasible": true,
+      "violations": [],
+      "monthly_cloud_cost": 28448.35,
+      "monthly_revenue": 215892.0,
+      "monthly_gross_profit": 187443.65,
+      "gross_margin": 0.8682,
+      "cost_per_request": 0.002371,
+      "break_even_requests": 37335,
+      "peak_required_rps": 23.148,
+      "capacity_headroom": 4.54,
+      "score": 92.27,
+      "cost_breakdown": {
+        "fixed_platform": 585,
+        "model_inference": 21600.0,
+        "variable_platform": 3600.0,
+        "retrieval": 2640.0,
+        "network_egress": 23.35
+      }
+    },
+    {
+      "candidate": {
+        "id": "azure-serverless-balanced",
+        "cloud": "azure",
+        "region": "eastus2",
+        "compute": "Azure Container Apps",
+        "model": "Azure OpenAI balanced model",
+        "model_class": "managed",
+        "topology": "private-hub-spoke",
+        "retrieval": "Azure AI Search",
+        "unit_input_per_million": 0.55,
+        "unit_output_per_million": 2.2,
+        "fixed_monthly_cost": 540,
+        "variable_platform_cost_per_request": 0.00035,
+        "expected_quality": 0.92,
+        "expected_p95_ms": 1450,
+        "expected_availability": 0.9995,
+        "max_sustained_rps": 85,
+        "egress_cost_per_gb": 0.087
+      },
+      "feasible": true,
+      "violations": [],
+      "monthly_cloud_cost": 31163.9,
+      "monthly_revenue": 215892.0,
+      "monthly_gross_profit": 184728.1,
+      "gross_margin": 0.8557,
+      "cost_per_request": 0.002597,
+      "break_even_requests": 34977,
+      "peak_required_rps": 23.148,
+      "capacity_headroom": 3.67,
+      "score": 91.9,
+      "cost_breakdown": {
+        "fixed_platform": 540,
+        "model_inference": 23760.0,
+        "variable_platform": 4200.0,
+        "retrieval": 2640.0,
+        "network_egress": 23.9
+      }
+    },
+    {
+      "candidate": {
+        "id": "aws-serverless-throughput",
+        "cloud": "aws",
+        "region": "us-east-1",
+        "compute": "ECS Fargate",
+        "model": "Bedrock balanced model",
+        "model_class": "managed",
+        "topology": "transit-gateway-private-link",
+        "retrieval": "OpenSearch Serverless",
+        "unit_input_per_million": 0.6,
+        "unit_output_per_million": 2.4,
+        "fixed_monthly_cost": 610,
+        "variable_platform_cost_per_request": 0.00032,
+        "expected_quality": 0.91,
+        "expected_p95_ms": 1380,
+        "expected_availability": 0.9995,
+        "max_sustained_rps": 95,
+        "egress_cost_per_gb": 0.09
+      },
+      "feasible": true,
+      "violations": [],
+      "monthly_cloud_cost": 33034.72,
+      "monthly_revenue": 215892.0,
+      "monthly_gross_profit": 182857.28,
+      "gross_margin": 0.847,
+      "cost_per_request": 0.002753,
+      "break_even_requests": 39899,
+      "peak_required_rps": 23.148,
+      "capacity_headroom": 4.1,
+      "score": 91.31,
+      "cost_breakdown": {
+        "fixed_platform": 610,
+        "model_inference": 25920.0,
+        "variable_platform": 3840.0,
+        "retrieval": 2640.0,
+        "network_egress": 24.72
+      }
+    },
+    {
+      "candidate": {
+        "id": "azure-premium-low-latency",
+        "cloud": "azure",
+        "region": "eastus2",
+        "compute": "AKS multi-zone",
+        "model": "Azure OpenAI premium model",
+        "model_class": "managed",
+        "topology": "private-hub-spoke-frontdoor",
+        "retrieval": "Azure AI Search premium",
+        "unit_input_per_million": 2.5,
+        "unit_output_per_million": 10.0,
+        "fixed_monthly_cost": 2650,
+        "variable_platform_cost_per_request": 0.00065,
+        "expected_quality": 0.97,
+        "expected_p95_ms": 720,
+        "expected_availability": 0.9999,
+        "max_sustained_rps": 420,
+        "egress_cost_per_gb": 0.087
+      },
+      "feasible": false,
+      "violations": [
+        "max_monthly_cloud_cost"
+      ],
+      "monthly_cloud_cost": 121113.9,
+      "monthly_revenue": 215978.4,
+      "monthly_gross_profit": 94864.5,
+      "gross_margin": 0.4392,
+      "cost_per_request": 0.010093,
+      "break_even_requests": 326106,
+      "peak_required_rps": 23.148,
+      "capacity_headroom": 18.14,
+      "score": 44.16,
+      "cost_breakdown": {
+        "fixed_platform": 2650,
+        "model_inference": 108000.0,
+        "variable_platform": 7800.0,
+        "retrieval": 2640.0,
+        "network_egress": 23.9
+      }
+    },
+    {
+      "candidate": {
+        "id": "onprem-gpu-sovereign",
+        "cloud": "on-premises",
+        "region": "customer-datacenter",
+        "compute": "Kubernetes + 2x L40S",
+        "model": "self-hosted open-weight 70B",
+        "model_class": "self-hosted",
+        "topology": "dual-edge-bgp-service-mesh",
+        "retrieval": "Qdrant HA",
+        "unit_input_per_million": 0,
+        "unit_output_per_million": 0,
+        "fixed_monthly_cost": 7900,
+        "variable_platform_cost_per_request": 0.00018,
+        "expected_quality": 0.9,
+        "expected_p95_ms": 980,
+        "expected_availability": 0.999,
+        "max_sustained_rps": 55,
+        "egress_cost_per_gb": 0.01
+      },
+      "feasible": false,
+      "violations": [
+        "quality_target",
+        "availability_target"
+      ],
+      "monthly_cloud_cost": 12702.75,
+      "monthly_revenue": 215784.0,
+      "monthly_gross_profit": 203081.25,
+      "gross_margin": 0.9411,
+      "cost_per_request": 0.001059,
+      "break_even_requests": 449330,
+      "peak_required_rps": 23.148,
+      "capacity_headroom": 2.38,
+      "score": 35.34,
+      "cost_breakdown": {
+        "fixed_platform": 7900,
+        "model_inference": 0.0,
+        "variable_platform": 2160.0,
+        "retrieval": 2640.0,
+        "network_egress": 2.75
+      }
+    }
+  ],
+  "assumptions": {
+    "month_days": 30,
+    "payload_kib_per_request": 24,
+    "minimum_capacity_headroom": 1.25,
+    "pricing": "versioned reference catalog; validate against provider quotes before commitment"
+  }
+}
