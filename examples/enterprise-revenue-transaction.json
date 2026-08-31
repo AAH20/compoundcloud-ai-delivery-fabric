@@ -1,0 +1,11 @@
+{
+  "policy": {"fraud_threshold": 0.82, "retry_limit": 2, "rto_target_ms": 250, "rpo_target_events": 0},
+  "failures": {"ai_inference": 1, "event_commit": 1},
+  "transactions": [
+    {"transaction_id": "order-1001", "revenue": 149.0, "fraud_score": 0.12, "inventory_available": true},
+    {"transaction_id": "order-1002", "revenue": 89.0, "fraud_score": 0.91, "inventory_available": true},
+    {"transaction_id": "order-1003", "revenue": 249.0, "fraud_score": 0.18, "inventory_available": false},
+    {"transaction_id": "order-1004", "revenue": 399.0, "fraud_score": 0.08, "inventory_available": true},
+    {"transaction_id": "order-1001", "revenue": 149.0, "fraud_score": 0.12, "inventory_available": true}
+  ]
+}

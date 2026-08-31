@@ -1,5 +1,7 @@
 # CompoundCloud AI Delivery Fabric
 
+> **Enterprise AI Platform · Microsoft Azure · Cloud Computing · Kubernetes · DevOps · AI Agents · MLOps · Data Engineering · SRE · FinOps · Cybersecurity · Business Intelligence**
+
 **Compile AI business demand into a deployable, benchmarked architecture with explicit gross margin, SLO, capacity, and network consequences.**
 
 Most cloud comparison tools ask, “What does this VM or model token cost?” The commercial question is harder: **Which topology delivers the required business outcome at the best risk-adjusted gross margin—and what evidence justifies deploying it?**
@@ -9,6 +11,18 @@ CompoundCloud turns a versioned workload contract into ranked Azure, AWS, GCP, a
 > This repository is an executable first vertical slice. Reference prices and benchmark profiles are transparent assumptions, not fabricated live measurements or provider quotes.
 
 ![CompoundCloud unit-economics decision](evidence/screenshots/03-unit-economics-decision.png)
+
+## New: Enterprise AI Production Lab
+
+One executable transaction now crosses payment-fraud policy, order orchestration, an inventory digital twin, multi-model inference and durable-event commit. The replay adds idempotency, deterministic fault injection, recovery gates and contribution economics; the evaluation loop returns **promote** or **hold** from measurable business and reliability evidence.
+
+```bash
+PYTHONPATH=src python3 -m compoundcloud.cli \
+  examples/enterprise-revenue-transaction.json --replay \
+  --output generated/enterprise-revenue-transaction
+```
+
+The checked-in run submits five records: two commit, two are correctly rejected, one duplicate is suppressed, and two injected transient failures recover with zero simulated event loss. See the [generated evidence](generated/enterprise-revenue-transaction/replay.md) and [production-lab architecture and claim boundary](docs/enterprise-ai-production-lab.md).
 
 ## Verified Azure deployment
 

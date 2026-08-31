@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "scope": "deterministic in-process transaction replay; not a live cloud benchmark",
+  "summary": {
+    "submitted": 5,
+    "committed": 2,
+    "rejected": 2,
+    "recovered_failures": 2,
+    "elapsed_ms": 0.024,
+    "gross_revenue": 548.0,
+    "variable_cost": 0.005208,
+    "contribution_profit": 547.994792,
+    "event_digest_sha256": "4996dccd33f8f30a32a611a7afd121812b681c7479cfdb9927c89f1d05707e7f"
+  },
+  "recovery": {
+    "observed_rto_ms": 0.024,
+    "observed_rpo_events": 0,
+    "rto_target_ms": 250,
+    "rpo_target_events": 0,
+    "passed": true
+  },
+  "events": [
+    {
+      "transaction_id": "order-1001",
+      "stage": "payment_fraud",
+      "status": "passed"
+    },
+    {
+      "transaction_id": "order-1001",
+      "stage": "order_orchestration",
+      "status": "passed"
+    },
+    {
+      "transaction_id": "order-1001",
+      "stage": "inventory_twin",
+      "status": "passed"
+    },
+    {
+      "transaction_id": "order-1001",
+      "stage": "ai_inference",
+      "status": "injected_failure",
+      "attempt": 1
+    },
+    {
+      "transaction_id": "order-1001",
+      "stage": "ai_inference",
+      "status": "passed"
+    },
+    {
+      "transaction_id": "order-1001",
+      "stage": "event_commit",
+      "status": "injected_failure",
+      "attempt": 1
+    },
+    {
+      "transaction_id": "order-1001",
+      "stage": "event_commit",
+      "status": "passed"
+    },
+    {
+      "transaction_id": "order-1002",
+      "stage": "payment_fraud",
+      "status": "fraud_rejected"
+    },
+    {
+      "transaction_id": "order-1003",
+      "stage": "payment_fraud",
+      "status": "passed"
+    },
+    {
+      "transaction_id": "order-1003",
+      "stage": "order_orchestration",
+      "status": "passed"
+    },
+    {
+      "transaction_id": "order-1003",
+      "stage": "inventory_twin",
+      "status": "inventory_rejected"
+    },
+    {
+      "transaction_id": "order-1004",
+      "stage": "payment_fraud",
+      "status": "passed"
+    },
+    {
+      "transaction_id": "order-1004",
+      "stage": "order_orchestration",
+      "status": "passed"
+    },
+    {
+      "transaction_id": "order-1004",
+      "stage": "inventory_twin",
+      "status": "passed"
+    },
+    {
+      "transaction_id": "order-1004",
+      "stage": "ai_inference",
+      "status": "passed"
+    },
+    {
+      "transaction_id": "order-1004",
+      "stage": "event_commit",
+      "status": "passed"
+    },
+    {
+      "transaction_id": "order-1001",
+      "stage": "deduplication",
+      "status": "duplicate_suppressed"
+    }
+  ]
+}
